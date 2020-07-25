@@ -1,17 +1,33 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <span>moosh</span>
+    <p>Art, Philosophy, Language, Software</p>
+    
+    <div><router-link to="/hello">Hello</router-link></div>
+    <div><router-link to="/home">Home</router-link></div>
+
+    <router-view></router-view>
+    
+    <div id="footer">
+      Nicholas Mikita, {{ currentYear }} 
+      <a target="_blank" href="https://www.github.com/nm357">
+        <img src="./assets/GitHub_Logo.png" width="60px">
+      </a>
+      <a target="_blank" href="https://www.linkedin.com/in/nicholasmikita">
+        <img src="./assets/LI-Logo.png" width="60px">
+      </a>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  data: function() {
+    return {
+      currentYear: new Date().getFullYear()
+    };
   }
 }
 </script>
@@ -24,5 +40,12 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  padding: 10px;
 }
 </style>
