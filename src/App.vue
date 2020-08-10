@@ -1,19 +1,23 @@
 <template>
   <div id="app">
     <span>moosh</span>
-    <p>Art, Philosophy, Language, Software</p>
     
-    <div><router-link to="/hello">Hello</router-link></div>
-    <div><router-link to="/home">Home</router-link></div>
+    
+    <section id="links">
+      <div><router-link to="/art">Art</router-link></div>
+      <div><router-link to="/philosophy">Philosophy</router-link></div>
+      <div><router-link to="/language">Language</router-link></div>
+      <div><router-link to="/software">Software</router-link></div>
+    </section>
 
     <router-view></router-view>
     
     <div id="footer">
       Nicholas Mikita, {{ currentYear }} 
-      <a target="_blank" href="https://www.github.com/nm357">
+      <a class="link" target="_blank" href="https://www.github.com/nm357">
         <img src="./assets/GitHub_Logo.png" width="60px">
       </a>
-      <a target="_blank" href="https://www.linkedin.com/in/nicholasmikita">
+      <a class="link" target="_blank" href="https://www.linkedin.com/in/nicholasmikita">
         <img src="./assets/LI-Logo.png" width="60px">
       </a>
     </div>
@@ -26,9 +30,24 @@ export default {
   name: 'App',
   data: function() {
     return {
-      currentYear: new Date().getFullYear()
+      currentYear: new Date().getFullYear(),
+      windowHeight: window.innerHeight,
+      windowWidth: window.innerWidth
     };
+  },
+  mounted: function() {
+    window.addEventListener('resize', onWindowResize); 
+  },
+  beforeDestroy: function() {
+    window.removeEventListener('resize')
+  },
+  methods: {
+    
   }
+}
+function onWindowResize() {
+  this.windowHeight = window.innerHeight;
+  this.windowWidth = window.innerWidth;
 }
 </script>
 
@@ -40,6 +59,11 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+#links {
+  text-align: left;
+  width: 80px;
 }
 
 #footer {
