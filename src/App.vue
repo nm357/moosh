@@ -14,10 +14,10 @@
     
     <div id="footer">
       Nicholas Mikita, {{ currentYear }} 
-      <a class="link" target="_blank" href="https://www.github.com/nm357">
+      <a class="link" target="_blank" v-bind:href="githubUrl">
         <img src="./assets/GitHub_Logo.png" width="60px">
       </a>
-      <a class="link" target="_blank" href="https://www.linkedin.com/in/nicholasmikita">
+      <a class="link" target="_blank" v-bind:href="linkedinUrl">
         <img src="./assets/LI-Logo.png" width="60px">
       </a>
     </div>
@@ -31,6 +31,8 @@ export default {
   data: function() {
     return {
       currentYear: new Date().getFullYear(),
+      githubUrl: 'https://www.github.com/nm357',
+      linkedinUrl: 'https://www.linkedin.com/in/nicholasmikita',
       windowHeight: window.innerHeight,
       windowWidth: window.innerWidth
     };
