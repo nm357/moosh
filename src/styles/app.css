@@ -1,0 +1,29 @@
+:root {
+  --windows95-grey: #c0c0c0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  height: 100%
+}
+
+#app {
+  height: inherit;
+}
+
+#footer {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--windows95-grey);
+  border-top: 1px solid white;
+}
+
+#mooshButton {
+  margin: 4px;
+  padding: 4px 8px;
+  border-top-color: white;
+  font-weight: bolder;
+}

@@ -23,8 +23,6 @@ export default class MegaMooshLand extends React.Component {
     //TODO media query for scaled views
     return (
       <section id="megaMooshLand">
-        <h1>🖖 Welcome to Mega Moosh Land! 🖖</h1>
-
         <div>
           { this.box }
           { this.box }

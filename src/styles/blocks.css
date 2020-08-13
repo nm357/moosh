@@ -1,5 +1,7 @@
 #megaMooshLand {
   text-align: center;
+  background: #fcc;
+  height: inherit;
 }
 
 .box {
