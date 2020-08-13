@@ -6,7 +6,6 @@
   "scripts": {
     "build": "webpack --mode production",
     "bundle": "webpack",
-    "check-types": "tsc",
     "dev": "webpack-dev-server --mode development --open --hots",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,7 +14,7 @@
     "url": "git+https://github.com/nm357/moosh.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "nm357",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/nm357/moosh/issues"
