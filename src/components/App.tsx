@@ -4,8 +4,6 @@ import MegaMooshLand from './MegaMooshLand';
 
 import githubLogo from '../assets/GitHub_Logo.png';
 import linkedinLogo from '../assets/LI-Logo.png';
-import greenshoes from '../assets/greenshoes.png';
-import greenshoesJumping from '../assets/greenshoes-jumping.png';
 
 export default class App extends React.PureComponent {
   private currentYear: number = new Date().getFullYear();
@@ -38,7 +36,6 @@ export default class App extends React.PureComponent {
         { this.linksSection }
 
         <section id="world">
-          <h1>🖖 Welcome to Mega Moosh Land! 🖖</h1>
           <MegaMooshLand />
         </section>
       
