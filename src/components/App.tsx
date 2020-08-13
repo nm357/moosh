@@ -32,15 +32,12 @@ export default class App extends React.PureComponent {
   render() {
     return(
       <div>
-        
         { this.linksSection }
 
-        <section id="world">
-          <MegaMooshLand />
-        </section>
+        <MegaMooshLand />
       
         { this.footerSection }
     </div>
-    )
-  }
+    );
+  };
 };

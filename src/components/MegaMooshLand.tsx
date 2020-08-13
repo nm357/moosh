@@ -10,14 +10,14 @@ import blockTile from '../assets/moosh-block.png';
 export default class MegaMooshLand extends React.Component {
   constructor(props: any) {
     super(props);
-  }
+  };
 
   private box = <img className="box block" src={blockTile} alt="Box Block"/>;
-  private brick = <img className="brick block" src={brickTile} alt="Brick Tile"/>
+  private brick = <img className="brick block" src={brickTile} alt="Brick Tile"/>;
 
   buildGround() {
     return new Array(4).fill(this.brick);
-  }
+  };
   
   render() {
     //TODO media query for scaled views
@@ -41,6 +41,6 @@ export default class MegaMooshLand extends React.Component {
           { this.buildGround() }
         </div>
       </section>
-    )
-  }
-}
+    );
+  };
+};
