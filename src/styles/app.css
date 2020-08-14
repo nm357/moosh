@@ -1,5 +1,5 @@
 :root {
-  --windows95-grey: #c0c0c0;
+  --mooshBar-color: #f0f0f0;
   --mooshBar-height: 32px;
 }
 
@@ -19,18 +19,24 @@ html, body {
   text-align: center;
 }
 
+#mooshBar, #mooshButton, #mooshMenu {
+  background-color: var(--mooshBar-color);
+  border-top: 1px solid white;
+}
+
 #mooshBar {
   display: inline-flex;
   position: absolute;
   bottom: 0;
   height: var(--mooshBar-height);
   width: 100%;
-  background-color: var(--windows95-grey);
-  border-top: 1px solid white;
+}
+
+#mooshBar >* {
+  border-radius: 3px;
 }
 
 #mooshButton {
-  border-top-color: white;
   font-weight: bolder;
 }
 
@@ -40,7 +46,7 @@ html, body {
   bottom: 2px;
   margin-right: 16px;
   padding: 6px 4px;
-  border: 1px solid black;
+  border: 1px solid darkgrey;
   font-size: 12px;
 }
 
@@ -49,14 +55,13 @@ html, body {
   bottom: 33px;
   left: 0;
   display: grid;
-  background-color: #c0c0c0;
-  border-top: 2px solid white;
   border-right: 1px solid darkgray;
+  border-left: 1px solid darkgrey;
+  border-bottom: 1px solid darkgrey;
   padding: 20px 20px 10px 10px;
 }
 
 #mooshMenu >* {
-  border-bottom: 1px solid black;
   padding: 6px;
   text-align: center;
 }

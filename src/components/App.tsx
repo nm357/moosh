@@ -12,13 +12,13 @@ const linkedinUrl = 'https://www.linkedin.com/in/nicholasmikita';
 
 const mooshMenu = (
   <div id="mooshMenu">
+    <a target="_blank" href={githubUrl}>
+      <img src={githubLogo} width="60px" />
+    </a>
+    <a target="_blank" href={linkedinUrl}>
+      <img src={linkedinLogo} width="60px" />
+    </a>
     <span>Nicholas Mikita, { `${new Date().getFullYear()}` }</span>
-        <a target="_blank" href={githubUrl}>
-          <img src={githubLogo} width="60px" />
-        </a>
-        <a target="_blank" href={linkedinUrl}>
-          <img src={linkedinLogo} width="60px" />
-        </a>
   </div>
   );
 
@@ -46,6 +46,7 @@ export default class App extends React.PureComponent {
   };
 
   makeMooshBar(mooshDate: Date) {
+    //TODO ClockTime component with live updating time
     return (
       <section id="mooshBar">
         <button id="mooshButton" onClick={this.handleClickMooshButton}>🖖 Moosh</button>
@@ -59,7 +60,6 @@ export default class App extends React.PureComponent {
 
   handleClickMooshButton(event: any) {
     event.preventDefault();
-    console.log('mooshMenu button');
     const updatedValue = !this.state.displayMooshMenu
     this.setState({ displayMooshMenu: updatedValue });
   };

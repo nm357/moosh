@@ -17,6 +17,7 @@ export default class MegaMooshLand extends React.Component {
     return new Array(4).fill(this.brick);
   };
   
+  // TODO handle landscape device orientation
   render() {
     return (
       <section id="megaMooshLand">
