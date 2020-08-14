@@ -1,7 +1,5 @@
 import React from 'react';
 
-import '../styles/blocks.css';
-
 import greenshoes from '../assets/greenshoes.png';
 import greenshoesJumping from '../assets/greenshoes-jumping.png';
 import brickTile from '../assets/moosh-brick.png';
@@ -20,10 +18,9 @@ export default class MegaMooshLand extends React.Component {
   };
   
   render() {
-    //TODO media query for scaled views
     return (
       <section id="megaMooshLand">
-        <div>
+        <div id="mooshBoxes">
           { this.box }
           { this.box }
           { this.box }

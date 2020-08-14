@@ -1,29 +1,91 @@
 :root {
   --windows95-grey: #c0c0c0;
+  --mooshBar-height: 32px;
 }
 
 html, body {
   margin: 0;
   padding: 0;
   border: 0;
-  height: 100%
+  height: 100%;
 }
 
 #app {
   height: inherit;
+  background-color: #fcc;
 }
 
-#footer {
-  position: sticky;
+#megaMooshLand div {
+  text-align: center;
+}
+
+#mooshBar {
+  display: inline-flex;
+  position: absolute;
   bottom: 0;
+  height: var(--mooshBar-height);
   width: 100%;
   background-color: var(--windows95-grey);
   border-top: 1px solid white;
 }
 
 #mooshButton {
-  margin: 4px;
-  padding: 4px 8px;
   border-top-color: white;
   font-weight: bolder;
+}
+
+#mooshDateTime { 
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+  margin-right: 16px;
+  padding: 6px 4px;
+  border: 1px solid black;
+  font-size: 12px;
+}
+
+#mooshMenu {
+  position: absolute;
+  bottom: 33px;
+  left: 0;
+  display: grid;
+  background-color: #c0c0c0;
+  border-top: 2px solid white;
+  border-right: 1px solid darkgray;
+  padding: 20px 20px 10px 10px;
+}
+
+#mooshMenu >* {
+  border-bottom: 1px solid black;
+  padding: 6px;
+  text-align: center;
+}
+
+#megaMooshLand {
+  height: calc(100% - 32px);
+}
+
+#mooshBoxes {
+  padding-top: 10%;
+}
+
+.box {
+  padding: 0px 32px;
+}
+
+.greenshoes {
+  padding: 0px 36px;
+}
+
+@media only screen and (max-width: 780px) {
+  #megaMooshLand >* img {
+    height: auto; 
+    width: auto; 
+    max-width: 300px; 
+    max-height: 300px;
+  }
+
+  #megaMooshLand div {
+    display: flex;
+  }
 }
