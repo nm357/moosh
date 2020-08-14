@@ -12,7 +12,7 @@ html, body {
 
 #app {
   height: inherit;
-  background-color: #fcc;
+  background-color: #61a8c4;
 }
 
 #megaMooshLand div {
@@ -66,12 +66,16 @@ html, body {
   text-align: center;
 }
 
+#mooshMenu >a:hover {
+  background-color: #c0c0c0;
+}
+
 #megaMooshLand {
   height: calc(100% - 32px);
 }
 
 #mooshBoxes {
-  padding-top: 10%;
+  padding: 10% 0 10% 0;
 }
 
 .box {
