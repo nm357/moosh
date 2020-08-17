@@ -12,20 +12,18 @@ html, body {
 
 #app {
   height: inherit;
-  background-color: #61a8c4;
-}
-
-#megaMooshLand div {
-  text-align: center;
 }
 
 #mooshBar, #mooshButton, #mooshMenu {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
   background-color: var(--mooshBar-color);
   border-top: 1px solid white;
 }
 
 #mooshBar {
-  display: inline-flex;
+  display: inline flex;
   position: absolute;
   bottom: 0;
   height: var(--mooshBar-height);
@@ -52,7 +50,7 @@ html, body {
 
 #mooshMenu {
   position: absolute;
-  bottom: 33px;
+  bottom: 32px;
   left: 0;
   display: grid;
   border-right: 1px solid darkgray;
@@ -71,11 +69,21 @@ html, body {
 }
 
 #megaMooshLand {
-  height: calc(100% - 32px);
+  height: calc(100vh - 32px);
+  background-color: cadetblue;
+}
+
+#megaMooshLand >*>* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#megaMooshLand div {
+  text-align: center;
 }
 
 #mooshBoxes {
-  padding: 10% 0 10% 0;
+  padding: 5vw 0 5vw 0;
 }
 
 .box {
