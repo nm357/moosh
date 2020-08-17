@@ -12,7 +12,8 @@ export default class MooshTime extends React.Component {
     super(props);
 
     this.state = {
-      date: new Date()
+      date: new Date(),
+      timerIntervalId: undefined
     };
 
     this.showTime = this.showTime.bind(this);
@@ -20,9 +21,15 @@ export default class MooshTime extends React.Component {
   }
 
   componentDidMount() {
-    setInterval(
-      () => { this.setState({ date: new Date() }); }
-      , 3000);
+    this.setState({
+      timerIntervalId: setInterval(() => { this.setState({ date: new Date() }); }, 3000)
+    });
+  }
+
+  componentWillUnmount() {
+    if (this.state.timerIntervalId) {
+      clearInterval(this.state.timerIntervalId);
+    }
   }
 
   showTime(): String {
