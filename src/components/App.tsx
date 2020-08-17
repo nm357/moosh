@@ -3,6 +3,7 @@ import React from 'react';
 import '../styles/app.css';
 
 import MegaMooshLand from './MegaMooshLand';
+import MooshTime from './MooshTime';
 
 import githubLogo from '../assets/GitHub_Logo.png';
 import linkedinLogo from '../assets/LI-Logo.png';
@@ -40,20 +41,17 @@ export default class App extends React.PureComponent {
       <div id="app">
         <MegaMooshLand />
         { this.state.displayMooshMenu ? mooshMenu : '' }
-        { this.makeMooshBar(new Date()) }
+        { this.makeMooshBar() }
       </div>
     );
   };
 
-  makeMooshBar(mooshDate: Date) {
-    //TODO ClockTime component with live updating time
+  makeMooshBar() {
     return (
       <section id="mooshBar">
         <button id="mooshButton" onClick={this.handleClickMooshButton}>🖖 Moosh</button>
   
-        <div id="mooshDateTime">
-          { `${mooshDate.toLocaleDateString()} ${mooshDate.toLocaleTimeString()}` }
-        </div>
+        <MooshTime />
       </section>
     )
   };
