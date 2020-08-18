@@ -84,7 +84,12 @@ div, section, img {
 }
 
 .box {
-  padding: 0px 32px;
+  margin: 0px 32px;
+}
+
+.box:hover {
+  transform: rotateY(3.142rad);
+  transition-duration: 600ms;
 }
 
 .greenshoes {

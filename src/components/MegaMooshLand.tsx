@@ -10,21 +10,28 @@ export default class MegaMooshLand extends React.Component {
     super(props);
   };
 
-  private box = <img className="box block" src={blockTile} alt="Box Block"/>;
-  private brick = <img className="brick block" src={brickTile} alt="Brick Tile"/>;
-
   buildGround() {
-    return new Array(4).fill(this.brick);
+    return new Array(4).fill(<img className="brick block" src={brickTile} alt="Brick Tile"/>);
   };
+
+  handleBoxClick(event: any) {
+    event.preventDefault();
+    console.log('click');
+  }
   
   // TODO handle landscape device orientation
   render() {
     return (
       <section id="megaMooshLand">
         <div id="mooshBoxes">
-          { this.box }
-          { this.box }
-          { this.box }
+          { box }
+          <img 
+            className="box block" 
+            src={blockTile} 
+            alt="Box Block"
+            onClick={this.handleBoxClick}
+          />
+          { box }
         </div>
                 
         <div>
@@ -40,3 +47,5 @@ export default class MegaMooshLand extends React.Component {
     );
   };
 };
+
+const box = <img className="box block" src={blockTile} alt="Box Block"/>;
