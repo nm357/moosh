@@ -10,14 +10,16 @@ html, body {
   height: 100%;
 }
 
+div, section, img {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 #app {
   height: inherit;
 }
 
 #mooshBar, #mooshButton, #mooshMenu {
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-
   background-color: var(--mooshBar-color);
   border-top: 1px solid white;
 }
@@ -73,11 +75,6 @@ html, body {
   background-color: cadetblue;
 }
 
-#megaMooshLand >*>* {
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
 #megaMooshLand div {
   text-align: center;
 }
@@ -103,6 +100,6 @@ html, body {
   }
 
   #megaMooshLand div {
-    display: flex;
+    display: block flex;
   }
 }
