@@ -7,6 +7,7 @@ import MooshTime from './MooshTime';
 
 import githubLogo from '../assets/GitHub_Logo.png';
 import linkedinLogo from '../assets/LI-Logo.png';
+import Mark from './Mark';
 
 const githubUrl = 'https://www.github.com/nm357';
 const linkedinUrl = 'https://www.linkedin.com/in/nicholasmikita';
@@ -36,9 +37,11 @@ export default class App extends React.PureComponent {
     this.makeMooshBar = this.makeMooshBar.bind(this);
     this.handleClickMooshButton = this.handleClickMooshButton.bind(this);
   }
+
   render() {
     return(
       <div id="app">
+        <Mark height={window.innerHeight} width={window.innerWidth}/>
         <MegaMooshLand />
         { this.state.displayMooshMenu ? mooshMenu : '' }
         { this.makeMooshBar() }
