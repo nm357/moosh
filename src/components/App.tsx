@@ -6,6 +6,8 @@ import MegaMooshLand from './MegaMooshLand';
 import MooshTime from './MooshTime';
 import MooshMenu from './MooshMenu';
 
+// TODO css animation fade to mooshLand.html page after clicking something
+
 export default class App extends React.PureComponent {
   state: { [prop: string]: any };
 
