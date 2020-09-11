@@ -4,24 +4,7 @@ import '../styles/app.css';
 
 import MegaMooshLand from './MegaMooshLand';
 import MooshTime from './MooshTime';
-
-import githubLogo from '../assets/GitHub_Logo.png';
-import linkedinLogo from '../assets/LI-Logo.png';
-
-const githubUrl = 'https://www.github.com/nm357';
-const linkedinUrl = 'https://www.linkedin.com/in/nicholasmikita';
-
-const mooshMenu = (
-  <div id="mooshMenu">
-    <a target="_blank" href={githubUrl}>
-      <img src={githubLogo} width="60px" />
-    </a>
-    <a target="_blank" href={linkedinUrl}>
-      <img src={linkedinLogo} width="60px" />
-    </a>
-    <span>Nicholas Mikita, { `${new Date().getFullYear()}` }</span>
-  </div>
-  );
+import MooshMenu from './MooshMenu';
 
 export default class App extends React.PureComponent {
   state: { [prop: string]: any };
@@ -40,7 +23,7 @@ export default class App extends React.PureComponent {
     return(
       <div id="app">
         <MegaMooshLand />
-        { this.state.displayMooshMenu ? mooshMenu : '' }
+        { this.state.displayMooshMenu ? <MooshMenu /> : '' }
         { this.makeMooshBar() }
       </div>
     );
