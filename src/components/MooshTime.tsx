@@ -18,31 +18,31 @@ export default class MooshTime extends React.Component {
 
     this.showTime = this.showTime.bind(this);
     this.showDate = this.showDate.bind(this);
-  }
+  };
 
   componentDidMount() {
     this.setState({
       timerIntervalId: setInterval(() => { this.setState({ date: new Date() }); }, 3000)
     });
-  }
+  };
 
   componentWillUnmount() {
     if (this.state.timerIntervalId) {
       clearInterval(this.state.timerIntervalId);
     }
-  }
+  };
 
   showTime(): String {
     return this.state.date.toLocaleTimeString(...timeStringFormatOptions);
-  }
+  };
 
   showDate(): String {
     return this.state.date.toLocaleDateString();
-  }
+  };
 
   render() {
     return(
       <div id="mooshDateTime">{`${this.showDate()} ${this.showTime()}`}</div>
-    )
-  }
+    );
+  };
 };
