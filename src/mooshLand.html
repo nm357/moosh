@@ -1,0 +1,110 @@
+<html>
+  <body>
+    <div id="sky"></div>
+
+    <div id="earth">
+      <img id="cornerstone" src="./assets/moosh-brick.png" alt="">
+    </div>
+    
+    <div id="moosh">
+      <img src="./assets/greenshoes.png" alt="">
+    </div>
+
+    <div id="blocks">
+      <img id="block" src="./assets/moosh-block.png" alt="">
+      <img src="./assets/moosh-block.png" alt="">
+      <img src="./assets/moosh-block.png" alt="">
+    </div>
+  </body>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0; 
+    }
+    #sky {
+      background: dodgerblue; 
+      height: 100vh; 
+      position: absolute; 
+      z-index: 0; 
+      width: 100vw;
+    }
+    #earth {
+      background: burlywood;
+      z-index: 1; 
+      position: absolute; 
+      width: 100vw; 
+      bottom: 0; 
+      display: flex;
+    }
+    #moosh {
+      position: absolute; 
+      z-index: 2; 
+      bottom: 0; 
+      left: 32px; 
+      overflow: hidden;
+    }
+    #blocks {
+      position: absolute; 
+      z-index: 3; 
+      bottom: 0; 
+      right: 0;
+    }
+    #blocks > img {
+      margin-left: 5vw;
+      margin-right: 5vw;
+    }
+    img {
+      width: 13vw;
+      max-width: 115px;
+    }
+  </style>
+
+  <script type="text/javascript">
+    const setMooshBottom = () => {
+      const groundHeight = document.getElementById('cornerstone').getBoundingClientRect().height;
+      document.getElementById('moosh').style.bottom = `${groundHeight}px`;
+    }
+
+    const setBlocksHeight = () => {
+      const groundHeight = document.getElementById('cornerstone').getBoundingClientRect().height;
+      const mooshHeight = document.getElementById('moosh').getBoundingClientRect().height;
+      
+      document.getElementById('blocks').style.bottom = `calc(${groundHeight + mooshHeight}px + 3vh)`;
+    }
+
+    const fillEarthWithBricks = () => {
+      const brickWidth = document.getElementById('block').getBoundingClientRect().width;
+      const neededBricks = Math.ceil(window.innerWidth / brickWidth);
+
+      const makeBrick = () => {
+        const brick = new Image();
+        brick.src = './assets/moosh-brick.png';
+        brick.className = 'brick';
+        
+        return brick;
+      } 
+
+      const earth = document.getElementById('earth');
+      const earthClone = earth.cloneNode(false);
+      earthClone.appendChild(document.getElementById('cornerstone'));
+      
+      while (earthClone.childNodes.length <= neededBricks) {
+        earthClone.appendChild(makeBrick());
+      }
+
+      earth.replaceWith(earthClone);
+    }
+
+    fillEarthWithBricks();
+    setMooshBottom();
+    setBlocksHeight();
+    
+    window.addEventListener('resize', () => {
+      fillEarthWithBricks();
+      setMooshBottom(); 
+      setBlocksHeight(); 
+    });
+  </script>
+</html>
+
